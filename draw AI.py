@@ -5,19 +5,17 @@ import random
 import math
 import os
 
-# while True: 
-#     print(pyautogui.position())
-
 def drawSquare(xPoz, yPoz):
     pyautogui.leftClick()
     pyautogui.mouseDown()
-    pyautogui.moveTo(xPoz + 150, yPoz)
+    size = random.randint(150,200)
+    pyautogui.moveTo(xPoz + size, yPoz)
     pyautogui.mouseUp()
     pyautogui.mouseDown()
-    pyautogui.moveTo(xPoz + 150, yPoz - 150)
+    pyautogui.moveTo(xPoz + size, yPoz - size)
     pyautogui.mouseUp()
     pyautogui.mouseDown()
-    pyautogui.moveTo(xPoz, yPoz - 150)
+    pyautogui.moveTo(xPoz, yPoz - size)
     pyautogui.mouseUp()
     pyautogui.mouseDown()
     pyautogui.moveTo(xPoz, yPoz)
@@ -38,13 +36,15 @@ def drawCircle(xPoz,yPoz):
 def drawRectangular(xPoz, yPoz):
     pyautogui.leftClick()
     pyautogui.mouseDown()
-    pyautogui.moveTo(xPoz + 350, yPoz)
+    size = random.randint(150,200)
+    size2 = size + 200
+    pyautogui.moveTo(xPoz + size2, yPoz)
     pyautogui.mouseUp()
     pyautogui.mouseDown()
-    pyautogui.moveTo(xPoz +350 , yPoz - 150)
+    pyautogui.moveTo(xPoz +size2 , yPoz - size)
     pyautogui.mouseUp()
     pyautogui.mouseDown()
-    pyautogui.moveTo(xPoz, yPoz -150)
+    pyautogui.moveTo(xPoz, yPoz -size)
     pyautogui.mouseUp()
     pyautogui.mouseDown()
     pyautogui.moveTo(xPoz, yPoz)
@@ -53,10 +53,11 @@ def drawRectangular(xPoz, yPoz):
 def drawTriangle(xPoz,yPoz):
     pyautogui.leftClick()
     pyautogui.mouseDown()
-    pyautogui.moveTo(xPoz + 150, yPoz)
+    size = random.randint(150,200)
+    pyautogui.moveTo(xPoz + size, yPoz)
     pyautogui.leftClick()
     pyautogui.mouseDown()
-    pyautogui.moveTo(xPoz + 75, yPoz - 75)
+    pyautogui.moveTo(xPoz + size/2, yPoz - size/2)
     pyautogui.leftClick()
     pyautogui.mouseDown()
     pyautogui.moveTo(xPoz, yPoz)
@@ -65,19 +66,21 @@ def drawTriangle(xPoz,yPoz):
 def drawPiramid(xPoz, yPoz):
     pyautogui.leftClick()
     pyautogui.mouseDown()
-    pyautogui.moveTo(xPoz + 250, yPoz)
+    size = random.randint(150,350)
+    size2 = size -100
+    pyautogui.moveTo(xPoz + size, yPoz)
     pyautogui.mouseUp()
     pyautogui.mouseDown()
-    pyautogui.moveTo(xPoz , yPoz - 150)
+    pyautogui.moveTo(xPoz , yPoz - size2)
     pyautogui.mouseUp()
     pyautogui.mouseDown()
-    pyautogui.moveTo(xPoz - 250, yPoz)
+    pyautogui.moveTo(xPoz - size, yPoz)
     pyautogui.mouseUp()
     pyautogui.mouseDown()
     pyautogui.moveTo(xPoz, yPoz)
     pyautogui.mouseUp()
 
-draw = [drawSquare,drawRectangular,drawTriangle,drawPiramid]
+draw = [drawSquare,drawRectangular,drawTriangle,drawPiramid,drawCircle]
 
 def randomColor(xArea,yArea):
     pyautogui.moveTo(305,89,1)
@@ -129,29 +132,3 @@ im = pyautogui.screenshot(region=(x, y, width, height))
 desktop_path = r"C:\Users\macar\OneDrive\Desktop"
 file_path = os.path.join(desktop_path, "screenshot2.png")
 im.save(file_path)
-print(f"Screenshot salvat la: {file_path}")
-
-# 794,816,,
-
-# galeata: x=305,y=89
-# culori: inceput x: x=792,816,840,864 (24-25)
-#         inceput y: y=84,107
-
-# pyautogui.leftClick()
-# pyautogui.scroll(-2000)
-# time.sleep(1)
-# xEqual=random.randint(0,6)*21 + 460
-# yEqual = random.randint(0,1)*15 + 90
-# pyautogui.moveTo(xEqual,yEqual)
-# pyautogui.leftClick()
-
-# x=460 (limita stanga) x = 586 (limita dreapta)
-# x+21 spatiu intre casutet 
-# y+10 spatiu intre casute
-
-# stanga x = 422 
-# dreapta x = 1348 
-# jos y=771
-# sus y=441
-
- 
