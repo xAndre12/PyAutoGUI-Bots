@@ -16,8 +16,8 @@ def on_click(n):
 
 def stop_file():
     global process
-    if process and process.poll() is None:  # verifică dacă încă rulează
-        process.terminate()  # sau process.kill()
+    if process and process.poll() is None: 
+        process.terminate()
         process = None
         subprocess.call("TASKKILL /F /IM chrome.exe", shell=True)
 
@@ -25,10 +25,8 @@ def listen_escape():
     keyboard.add_hotkey("esc", lambda: stop_file())
     keyboard.wait()
 
-# thread pentru ESC
 threading.Thread(target=listen_escape, daemon=True).start()
 
-# ---------------- GUI ----------------
 root = tk.Tk()
 root.title("Human Benchmark Bots")
 
