@@ -83,7 +83,7 @@ def drawPiramid(xPoz, yPoz):
 draw = [drawSquare,drawRectangular,drawTriangle,drawPiramid,drawCircle]
 
 def randomColor(xArea,yArea):
-    pyautogui.moveTo(305,89,1)
+    pyautogui.moveTo(305,89)
     pyautogui.leftClick()
     xEqual = random.randint(0,10)*21+792
     yEqual = random.randint(0,1)*23+84
@@ -93,9 +93,9 @@ def randomColor(xArea,yArea):
         if xEqual == 792 and yEqual == 84:
             xEqual = random.randint(0,10)*21+792
             yEqual = random.randint(0,1)*23+84
-    pyautogui.moveTo(xEqual,yEqual,1)
+    pyautogui.moveTo(xEqual,yEqual)
     pyautogui.leftClick()
-    pyautogui.moveTo(xArea + 25,yArea - 15,1)
+    pyautogui.moveTo(xArea + 25,yArea - 15)
     pyautogui.leftClick()
     pyautogui.leftClick()
 
@@ -103,25 +103,25 @@ subprocess.Popen("mspaint")
 time.sleep(2)
 
 for i in range(random.randint(20,20)):
-    pyautogui.moveTo(792,108,1)
+    pyautogui.moveTo(792,108)
     pyautogui.leftClick()
-    pyautogui.moveTo(405,97,1)
+    pyautogui.moveTo(405,97)
     pyautogui.leftClick()
     xArea= random.randint(400,1348)
     yArea= random.randint(400,771)
-    pyautogui.moveTo(xArea,yArea,2)
+    pyautogui.moveTo(xArea,yArea)
     draw[random.randint(0,3)](xArea,yArea)
     randomColor(xArea,yArea)
     
-pyautogui.moveTo(305,89,1)
+pyautogui.moveTo(305,89)
 pyautogui.leftClick()
 xEqual = random.randint(0,10)*21+792
 yEqual = random.randint(0,1)*23+84
-pyautogui.moveTo(xEqual,yEqual,1)
+pyautogui.moveTo(xEqual,yEqual)
 pyautogui.leftClick()
-pyautogui.moveTo(320,295,1)
+pyautogui.moveTo(320,295)
 pyautogui.leftClick()
-pyautogui.moveTo(310,878,1)
+pyautogui.moveTo(310,878)
 pyautogui.leftClick()
 
 x = 308

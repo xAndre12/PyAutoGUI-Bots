@@ -43,16 +43,16 @@ text = f"{text1}{text2} {text3}"
 # Mod de selectare elemente dupa CLASS_NAME
 input = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "txtInput")))
 
-time.sleep(10)
+time.sleep(12)
 
 input.click()
 
-time.sleep(0.2)
+time.sleep(0.5)
 a = 0
 for letter in text:
     a=a+1
     if a<=2:
-        time.sleep(0.05)
+        time.sleep(0.01)
         pyautogui.write(letter)
     else:
         pyautogui.write(letter)
